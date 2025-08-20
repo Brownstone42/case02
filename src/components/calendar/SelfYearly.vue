@@ -252,10 +252,11 @@ export default {
                 let tdCount = 0;
                 let tsCount = 0; //tri self
 
+
                 for (const key in resultsObject) {
                     if (resultsObject.hasOwnProperty(key) && resultsObject[key] === true) {
                         if (key.startsWith('Bool_LH_')) {
-                            hexCount++;
+                            //hexCount++;
                             if (key.endsWith('_Current_Year')) {
                                 hyCount++;
                             } else if (key.endsWith('_Current_Month')) {
@@ -267,7 +268,7 @@ export default {
                             }
                         }
                         else if (key.startsWith('Bool_CL_')) {
-                            clashCount++;
+                            //clashCount++;
                             if (key.endsWith('_Current_Year')) {
                                 cyCount++;
                             } else if (key.endsWith('_Current_Month')) {
@@ -279,7 +280,7 @@ export default {
                             }
                         }
                         else if (key.startsWith('Bool_SH_')) {
-                            triCount++;
+                            //triCount++;
                             if (key.endsWith('_Current_Year')) {
                                 tyCount++;
                             } else if (key.endsWith('_Current_Month') || key.endsWith('_Year_Month')) {
@@ -293,11 +294,86 @@ export default {
                     }
                 }
 
+                let clCrucial, clImportant, clNormal, clSelf,
+                hexCrucial, hexImportant, hexNormal, hexSelf,
+                triCrucial, triImportant, triNormal, triSelf,
+                desCrucial, desImportant, desNormal, desSelf
+
+                clCrucial = clImportant = clNormal = clSelf = 0
+                hexCrucial = hexImportant = hexNormal = hexSelf = 0
+                triCrucial = triImportant = triNormal = triSelf = 0
+                desCrucial = desImportant = desNormal = desSelf = 0
+
+                for (const key in resultsObject) {
+                    if (resultsObject.hasOwnProperty(key) && resultsObject[key] === true) {
+                        if (key.startsWith('Bool_LH_')) {
+                            const hexMap = config.boolWeightRankMap.Hex
+
+                            if (hexMap.Crucial && hexMap.Crucial.includes(key)) {
+                                hexCrucial++;
+                                hexCount++;
+                            }
+                            else if (hexMap.Important && hexMap.Important.includes(key)) {
+                                hexImportant++;
+                                hexCount++;
+                            }
+                            else if (hexMap.Normal && hexMap.Normal.includes(key)) {
+                                hexNormal++;
+                                hexCount++;
+                            }
+                            else if (hexMap.Self && hexMap.Self.includes(key)) {
+                                hexSelf++;
+                            }
+                        }
+                        else if (key.startsWith('Bool_CL_')) {
+                            const clashMap = config.boolWeightRankMap.Clash
+
+                            if (clashMap.Crucial && clashMap.Crucial.includes(key)) {
+                                clCrucial++;
+                                clashCount++;
+                            }
+                            else if (clashMap.Important && clashMap.Important.includes(key)) {
+                                clImportant++;
+                                clashCount++;
+                            }
+                            else if (clashMap.Normal && clashMap.Normal.includes(key)) {
+                                clNormal++;
+                                clashCount++;
+                            }
+                            else if (clashMap.Self && clashMap.Self.includes(key)) {
+                                clSelf++;
+                            }
+                        }
+                        else if (key.startsWith('Bool_SH_')) {
+                            const triMap = config.boolWeightRankMap.Tri
+
+                            if (triMap.Crucial && triMap.Crucial.includes(key)) {
+                                triCrucial++;
+                                triCount++;
+                            }
+                            else if (triMap.Important && triMap.Important.includes(key)) {
+                                triImportant++;
+                                triCount++;
+                            }
+                            else if (triMap.Normal && triMap.Normal.includes(key)) {
+                                triNormal++;
+                                triCount++;
+                            }
+                            else if (triMap.Self && triMap.Self.includes(key)) {
+                                triSelf++;
+                            }
+                        }
+                    }
+                }
+
                 return {
                     triCount, hexCount, clashCount,
                     cyCount, cmCount, cdCount, csCount,
                     hyCount, hmCount, hdCount, hsCount,
-                    tyCount, tmCount, tdCount, tsCount
+                    tyCount, tmCount, tdCount, tsCount,
+                    hexCrucial, hexImportant, hexNormal, hexSelf,
+                    clCrucial, clImportant, clNormal, clSelf,
+                    triCrucial, triImportant, triNormal, triSelf,
                 };
             }
 

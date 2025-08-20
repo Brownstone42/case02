@@ -170,6 +170,70 @@ export async function getConfig() {
             if (element === 'WATER') return 'FIRE'
             return null
         },
+        //'Bool_DT_Self_Day_Current_Month'
+        //'Bool_DT_Self_Year_Current_Year'
+        boolWeightRankMap: {
+            /*'Destruction': {
+                'Important: [
+                    'Bool_DT_Self_Day_Current_Month',
+                    'Bool_DT_Self_Year_Current_Year'
+                ]
+            },
+            */
+            'Clash': {
+                'Crucial': [
+                    'Bool_CL_Self_Year_Current_Month',
+                    'Bool_CL_Self_Day_Current_Month',
+                    'Bool_CL_Self_Day_Current_Year',
+                    'Bool_CL_Self_Year_Current_Year',
+                ],
+                'Important': [
+                    'Bool_CL_Self_Month_Current_Month',
+                ],
+                'Normal': [
+                    'Bool_CL_Self_Year_Current_Day',
+                    'Bool_CL_Self_Month_Current_Year',
+                    'Bool_CL_Self_Month_Current_Day',
+                    'Bool_CL_Self_Day_Current_Day'
+                ],
+                'Self': [
+                    'Bool_CL_Self_Year_Month',
+                    'Bool_CL_Self_Year_Day',
+                    'Bool_CL_Self_Month_Day'
+                ]
+            },
+            'Hex': {
+                'Crucial': [
+                    'Bool_LH_Self_Year_Current_Month',
+                    'Bool_LH_Self_Day_Current_Month',
+                    'Bool_LH_Self_Day_Current_Year',
+                    'Bool_LH_Self_Year_Current_Year',
+                ],
+                'Important': [
+                    'Bool_LH_Self_Month_Current_Month',
+                ],
+                'Normal': [
+                    'Bool_LH_Self_Year_Current_Day',
+                    'Bool_LH_Self_Month_Current_Year',
+                    'Bool_LH_Self_Month_Current_Day',
+                    'Bool_LH_Self_Day_Current_Day'
+                ],
+                'Self': [
+                    'Bool_LH_Self_Year_Month',
+                    'Bool_LH_Self_Year_Day',
+                    'Bool_LH_Self_Month_Day'
+                ]
+            },
+            'Tri': {
+                'Crucial': [
+                    'Bool_SH_Self_Year_Current_Month_Day',
+                    'Bool_SH_Self_Day_Current_Month_Day'
+                ],
+                'Self': [
+                    'Bool_SH_Self'
+                ]
+            } 
+        }
     }
 
     return config

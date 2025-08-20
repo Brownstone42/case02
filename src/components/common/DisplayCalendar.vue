@@ -78,70 +78,58 @@
                   <div class="zodiac-info mb-2">
                       <span
                           class="tag is-small"
-                          :class="{'is-danger': dayData.zodiacCount.cyCount > 0}"
-                      >{{ `cy${dayData.zodiacCount.cyCount}` }}</span
-                      >
+                          :class="{'is-danger': dayData.zodiacCount.clCrucial > 0}"
+                      >{{ `cc${dayData.zodiacCount.clCrucial}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-danger': dayData.zodiacCount.cmCount > 0}"
-                      >{{ `cm${dayData.zodiacCount.cmCount}` }}</span
-                      >
+                          :class="{'is-danger': dayData.zodiacCount.clImportant > 0}"
+                      >{{ `ci${dayData.zodiacCount.clImportant}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-danger': dayData.zodiacCount.cdCount > 0}"
-                      >{{ `cd${dayData.zodiacCount.cdCount}` }}</span
-                      >
-                      <span
+                          :class="{'is-danger': dayData.zodiacCount.clNormal > 0}"
+                      >{{ `cn${dayData.zodiacCount.clNormal}` }}</span>
+                      <!--<span
                           class="tag is-small"
                           :class="{'is-danger': dayData.zodiacCount.csCount > 0}"
-                      >{{ `cs${dayData.zodiacCount.csCount}` }}</span
-                      >
+                      >{{ `cs${dayData.zodiacCount.csCount}` }}</span>-->
                   </div>
 
                   <div class="zodiac-info mb-2">
                       <span
                           class="tag is-small"
-                          :class="{'is-primary': dayData.zodiacCount.hyCount > 0}"
-                      >{{ `hy${dayData.zodiacCount.hyCount}` }}</span
-                      >
+                          :class="{'is-primary': dayData.zodiacCount.hexCrucial > 0}"
+                      >{{ `hc${dayData.zodiacCount.hexCrucial}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-primary': dayData.zodiacCount.hmCount > 0}"
-                      >{{ `hm${dayData.zodiacCount.hmCount}` }}</span
-                      >
+                          :class="{'is-primary': dayData.zodiacCount.hexImportant > 0}"
+                      >{{ `hi${dayData.zodiacCount.hexImportant}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-primary': dayData.zodiacCount.hdCount > 0}"
-                      >{{ `hd${dayData.zodiacCount.hdCount}` }}</span
-                      >
-                      <span
+                          :class="{'is-primary': dayData.zodiacCount.hexNormal > 0}"
+                      >{{ `hn${dayData.zodiacCount.hexNormal}` }}</span>
+                      <!--<span
                           class="tag is-small"
                           :class="{'is-primary': dayData.zodiacCount.hsCount > 0}"
-                      >{{ `hs${dayData.zodiacCount.hsCount}` }}</span
-                      >
+                      >{{ `hs${dayData.zodiacCount.hsCount}` }}</span>-->
                   </div>
 
                   <div class="zodiac-info mb-2">
                       <span
                           class="tag is-small"
-                          :class="{'is-support': dayData.zodiacCount.tyCount > 0}"
-                      >{{ `ty${dayData.zodiacCount.tyCount}` }}</span
-                      >
+                          :class="{'is-support': dayData.zodiacCount.triCrucial > 0}"
+                      >{{ `tc${dayData.zodiacCount.triCrucial}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-support': dayData.zodiacCount.tmCount > 0}"
-                      >{{ `tm${dayData.zodiacCount.tmCount}` }}</span
-                      >
+                          :class="{'is-support': dayData.zodiacCount.triImportant > 0}"
+                      >{{ `ti${dayData.zodiacCount.triImportant}` }}</span>
                       <span
                           class="tag is-small"
-                          :class="{'is-support': dayData.zodiacCount.tdCount > 0}"
-                      >{{ `td${dayData.zodiacCount.tdCount}` }}</span
-                      >
-                      <span
+                          :class="{'is-support': dayData.zodiacCount.triNormal > 0}"
+                      >{{ `tn${dayData.zodiacCount.triNormal}` }}</span>
+                      <!--<span
                           class="tag is-small"
                           :class="{'is-support': dayData.zodiacCount.tsCount > 0}"
-                      >{{ `ts${dayData.zodiacCount.tsCount}` }}</span
-                      >
+                      >{{ `ts${dayData.zodiacCount.tsCount}` }}</span>-->
                   </div>
 
                   <div class="zodiac-info mb-2">
